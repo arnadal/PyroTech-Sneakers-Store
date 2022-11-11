@@ -1,0 +1,169 @@
+/* AR Nadal Verma 7A - 'Sneakers Store' for PyroTech Assignment 1 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+:root {
+  --colorScheme1:rgb(8, 112, 153, 0.2);
+  --colorScheme2: rgb(7, 84, 115, 0.4);
+  --colorScheme: rgb(6, 64, 87, 0.6);
+  --colorScheme4: rgb(6, 46, 61, 0.8);
+  --bodyBackground: var(--colorScheme4);
+  --filterInputBackground: var(--colorScheme1);
+  --footerBackground: rgb(8, 63, 84);
+  --highlightedText: rgb(18, 107, 140);
+}
+
+::selection {
+  background-color: var(--highlightedText);
+  color: white;
+}
+* {
+  outline: none;
+}
+
+body {
+  background-color: var(--bodyBackground);
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: white;
+  font-size: 16px;
+  padding: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  background-color: var(--colorScheme1);
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.fixedMenu {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  background-color: var(--colorScheme1);
+  padding: 15px;
+  border-radius: 15px;
+  z-index: 65536;
+}
+
+.fixedMenu .themeToggler {
+  float: right;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+footer {
+  background-color: var(--footerBackground);
+  color: white;
+  width: 97%;
+  padding: 1.5%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.filtersTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+select {
+  border: none;
+  border-radius: 15px;
+  background-color: var(--filterInputBackground);
+  color: white;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+option {
+  background-color: var(--filterInputBackground);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #444444;
+}
+
+.catalog {
+  background-color: var(--colorScheme1);
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 50%;
+}
+
+.catalog_men, 
+.catalog_women {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorScheme2);
+  padding: 10px;
+  border-radius: 15px;
+  width: calc(100% - 35px);
+}
+
+.storeItems {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorScheme3);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.storeItem {
+  background-color: var(--colorScheme4);
+  padding: 15px;
+  border-radius: 15px;
+  transition: opacity 1s;
+}
+
+.storeItem:not(:last-child), .storeItem:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.catalog .catalog_men {
+  margin-right: 15px;
+}
+
+.catalog .catalog_women {
+  margin-left: 15px;
+}
+
+img.sneakerImage {
+  position: relative;
+  width: 33.333333333333333%;
+  height: 100%;
+  border-radius: 10px;
+  float: right;
+  filter: drop-shadow(0px 7.5px 7.5px #00000088);
+  animation-name: upAndDown;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes upAndDown {
+  0% { bottom: 0px; }
+  10% { bottom: 5px; }
+  20% { bottom: 10px; }
+  30% { bottom: 15px; }
+  40% { bottom: 20px; }
+  50% { bottom: 25px; }
+  60% { bottom: 20px; }
+  70% { bottom: 15px; }
+  80% { bottom: 10px; }
+  90% { bottom: 5px; }
+  100% { bottom: 0px;}
+}

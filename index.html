@@ -1,0 +1,184 @@
+<!-- AR Nadal Verma 7A (2022-2023) - 'Sneakers Store' for PyroTech Assignment 1. -->
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>SneakPeak Store</title>
+    <link rel="stylesheet" href="index.css" type="text/css"></link>
+  </head>
+
+  <body onload="resetFilters()">
+    <img style="user-select:none;width:50%;height:50%;" src="logo.png"></img>
+    <h1>SneakPeak Store</h1>
+    <p>Find the right sneakers.</p>
+    <br>
+    <div class="fixedMenu">
+      <button class="themeToggler fixed" onclick="toggleTheme()">Toggle Theme</button>
+      <br>
+      <br>
+      <br>
+      <strong class="filtersTitle">Filters:</strong>&nbsp; &nbsp; &nbsp;  Showcase:
+      <select id="sneakerFilter" onchange="filterSneaker()">
+        <option value="storeItem">All Sneakers</option>
+        <option value="colored">Only Colored Sneakers</option>
+        <option value="orange">Only Orange Sneakers</option>
+        <option value="blue">Only Blue Sneakers</option>
+        <option value="hiking">Only Hiking/Trekking Sneakers</option>
+        <option value="casual">Only Casual Sneakers</option>
+      </select>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="catalog">
+      <div class="catalog_men">
+        <h1>Men</h1>
+        <div class="storeItems">
+          <div class="storeItem colored orange">
+            <img src="catalog-men-orange-sneakers.png" class="sneakerImage"></img>
+            <strong>Orange Sneaker</strong>
+            <br>
+            Clumsy; funny, and cannot be underestimated.
+          </div>
+
+          <div class="storeItem colored blue">
+            <img src="catalog-men-blue-sneakers.png" class="sneakerImage"></img>
+            <strong>Blue Sneaker</strong>
+            <br>
+            Focused on goals.
+          </div>
+
+          <div class="storeItem hiking">
+            <img src="catalog-men-hiking-sneakers.png" class="sneakerImage"></img>
+            <strong>Hiking/Trekking Sneaker</strong>
+            <br>
+            To get ready for going on a perpetual adventure.
+          </div>
+
+          <div class="storeItem casual">
+            <img src="catalog-men-casual-sneakers.png" class="sneakerImage"></img>
+            <strong>Casual Sneaker</strong>
+            <br>
+            Walk; casually.
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog_women">
+        <h1>Women</h1>
+        <div class="storeItems">
+          <div class="storeItem colored orange">
+            <img src="catalog-women-orange-sneakers.png" class="sneakerImage"></img>
+            <strong>Orange Sneaker</strong>
+            <br>
+            Clumsy; funny, and cannot be underestimated.
+          </div>
+
+          <div class="storeItem colored blue">
+            <img src="catalog-women-blue-sneakers.png" class="sneakerImage"></img>
+            <strong>Blue Sneaker</strong>
+            <br>
+            Focused on goals.
+          </div>
+
+          <div class="storeItem hiking">
+            <img src="catalog-women-hiking-sneakers.png" class="sneakerImage"></img>
+            <strong>Hiking/Trekking Sneaker</strong>
+            <br>
+            To get ready for going on a perpetual adventure.
+          </div>
+
+          <div class="storeItem casual">
+            <img src="catalog-women-casual-sneakers.png" class="sneakerImage"></img>
+            <strong>Casual Sneaker</strong>
+            <br>
+            Walk; casually.
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h1 style="text-align: center;">Thanks for visiting <span style="color:var(--highlightedText);text-shadow:0px 5px 15px black">SneakPeak</span>!</h1>
+    <p style="text-align: center; margin-bottom: 45%;">By <strong style="color:var(--highlightedText);text-shadow:0px 5px 15px black">AR Nadal Verma 7A</strong> for the PyroTech Club.</p>
+    <br>
+    <footer>
+      By <strong>AR Nadal Verma 7A</strong> for the PyroTech Club.
+    </footer>
+
+    <script>
+      function resetFilters() {
+        document.getElementById("sneakerFilter").value = "storeItem";
+      }
+
+      function filterSneaker() {
+        var filterInput = document.getElementById("sneakerFilter"); 
+        var filterValue = filterInput.value;
+        var storeItems = document.getElementsByClassName("storeItem");
+
+        for (let i = 0; i < storeItems.length; i++) {
+          var isMatchingItem = (storeItems[i].className.includes(filterValue));
+          if (isMatchingItem == false) {
+            storeItems[i].style.opacity = 1 / 3;
+          } else {
+            storeItems[i].style.opacity = 1;
+          }
+        }
+      }
+
+      var theme = 0;
+      var themes = [
+        {
+          name: "Blue",
+          colorScheme1: "rgb(8, 112, 153, 0.2)",
+          colorScheme2: "rgb(7, 84, 115, 0.4)",
+          colorScheme3: "rgb(6, 64, 87, 0.6)",
+          colorScheme4: "rgb(6, 46, 61, 0.8)",
+          footerBackground: "rgb(8, 63, 84)",
+          highlightedText: "rgb(18, 107, 140)",
+        },
+        {
+          name: "Green",
+          colorScheme1: "rgb(154, 205, 50, 0.2)",
+          colorScheme2: "rgb(115, 160, 25, 0.4)",
+          colorScheme3: "rgb(95, 133, 21, 0.6)",
+          colorScheme4: "rgb(76, 107, 15, 0.8)",
+          footerBackground: "rgb(54, 77, 9)",
+          highlightedText: "rgb(154, 205, 50)"
+        },
+        {
+          name: "Red",
+          colorScheme1: "rgb(201, 76, 50, 0.2)",
+          colorScheme2: "rgb(168, 57, 34, 0.4)",
+          colorScheme3: "rgb(128, 40, 22, 0.6)",
+          colorScheme4: "rgb(97, 29, 16, 0.8)",
+          footerBackground: "rgb(77, 22, 11)",
+          highlightedText: "rgb(201, 76, 50)"
+        }
+      ]
+      function toggleTheme() {
+        var rootCSS = document.querySelector(":root").style;
+        if (theme == 2) {
+          theme = 0;
+
+          rootCSS.setProperty('--colorScheme1', themes[theme].colorScheme1);
+          rootCSS.setProperty('--colorScheme2', themes[theme].colorScheme2);
+          rootCSS.setProperty('--colorScheme3', themes[theme].colorScheme3);
+          rootCSS.setProperty('--colorScheme4', themes[theme].colorScheme4);
+          rootCSS.setProperty('--footerBackground', themes[theme]. footerBackground);
+          rootCSS.setProperty('--highlightedText', themes[theme].highlightedText);
+        } else {
+          rootCSS.setProperty('--colorScheme1', themes[theme+1].colorScheme1);
+          rootCSS.setProperty('--colorScheme2', themes[theme+1].colorScheme2);
+          rootCSS.setProperty('--colorScheme3', themes[theme+1].colorScheme3);
+          rootCSS.setProperty('--colorScheme4', themes[theme+1].colorScheme4);
+          rootCSS.setProperty('--footerBackground', themes[theme+1]. footerBackground);
+          rootCSS.setProperty('--highlightedText', themes[theme+1]. highlightedText);
+          theme++;
+        }
+      }
+    </script>
+  </body>
+
+</html>
