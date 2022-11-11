@@ -21,6 +21,10 @@
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bodyBackground);
   background-image: url('background.png');
