@@ -19,7 +19,6 @@
 }
 * {
   outline: none;
-  transition: background 1s, background-color 1s;
 }
 
 html {
